@@ -66,6 +66,14 @@ public class FormattedDateParameterPropertiesProvider extends AbstractBuildParam
 
         // return the formatted timestamp
         newParams.put("build.formatted.timestamp", formattedTimestamp);
+		newParams.put("build.date.year", (new SimpleDateFormat("yyyy")).format(buildStartDate));
+        newParams.put("build.date.month", (new SimpleDateFormat("MM")).format(buildStartDate));
+        newParams.put("build.date.day", (new SimpleDateFormat("dd")).format(buildStartDate));
+		
+		
+		newParams.put("build.date.hour", (new SimpleDateFormat("HH")).format(buildStartDate));
+        newParams.put("build.date.minute", (new SimpleDateFormat("mm")).format(buildStartDate));
+        newParams.put("build.date.second", (new SimpleDateFormat("ss")).format(buildStartDate));
         return newParams;
 
 
